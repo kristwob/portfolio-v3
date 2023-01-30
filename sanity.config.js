@@ -10,7 +10,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
 
 // Define the singleton document types
-const singletonTypes = new Set(["settings"])
+const singletonTypes = new Set(["cv"])
 
 export default defineConfig({
   basePath: "/studio",
