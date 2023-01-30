@@ -31,11 +31,6 @@ export default defineType({
       of: [{ type: "block" }],
     }),
     defineField({
-      name: "excerpt",
-      title: "Excerpt",
-      type: "text",
-    }),
-    defineField({
       name: "coverImage",
       title: "Cover Image",
       type: "image",
