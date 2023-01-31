@@ -10,11 +10,11 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'orange': "#FF8500",
-      'purple': "#240046",
-      'white': '#F8F9FA',
-      'black': '#111111'
-    },
+      orange: "#FF8500",
+      purple: "#240046",
+      white: "#F8F9FA",
+      black: "#111111",
+    }
   },
   plugins: [],
 };
