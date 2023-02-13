@@ -16,7 +16,7 @@ const Hamburger = () => {
 
   return (
     <>
-      <button className={`hamburger hamburger--slider ${hamburger ? "is-active" : ""} z-20 md:hidden`} onClick={handleClick} type="button">
+      <button className={`z-20 md:hidden hamburger hamburger--slider ${hamburger ? "is-active" : ""} `} onClick={handleClick} type="button">
         <span className="hamburger-box">
           <span className="hamburger-inner"></span>
         </span>
