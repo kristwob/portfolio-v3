@@ -17,10 +17,10 @@ const Hamburger = () => {
   return (
     <>
       <button className={`hamburger hamburger--slider ${hamburger ? "is-active" : ""} z-20 md:hidden`} onClick={handleClick} type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
+        <span className="hamburger-box">
+          <span className="hamburger-inner"></span>
         </span>
-        <span class="sr-only">Menu</span>
+        <span className="sr-only">Menu</span>
       </button>
 
       <div className={`nav ${navOpen ? "nav-open" : ""} bg-black z-10`}>
