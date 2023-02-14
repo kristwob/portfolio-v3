@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center py-4">
       <Link href="/" className="flex items-end">
-        <span className="text-3xl font-display tracking-wider">kristian</span>
-        <span className="w-4 h-4 bg-orange_400 transition block rounded-full ml-1.5 -translate-y-1/4"></span>
+        <span className="text-3xl font-display tracking-widest">kristian</span>
+        <span className="w-3 h-3 bg-orange_400 transition block rounded-full ml-1.5 -translate-y-[50%]"></span>
       </Link>
       <nav className="font-mono">
         <ul className="items-center hidden md:flex">
