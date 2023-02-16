@@ -25,22 +25,22 @@ const Hamburger = () => {
       <div className={`nav ${navOpen ? "nav-open" : ""} bg-black z-10`}>
         <ul className="nav-list text-lg font-semibold">
           <li>
-            <a onClick={handleClick} href="#about">
+            <a onClick={handleClick} href="/#about">
               about
             </a>
           </li>
           <li>
-            <a onClick={handleClick} href="#projects">
+            <a onClick={handleClick} href="/#projects">
               projects
             </a>
           </li>
           <li>
-            <a onClick={handleClick} href="#experiences">
+            <a onClick={handleClick} href="/#experiences">
               experience
             </a>
           </li>
           <li>
-            <a onClick={handleClick} href="#contact">
+            <a onClick={handleClick} href="/#contact">
               contact
             </a>
           </li>

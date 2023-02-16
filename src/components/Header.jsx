@@ -12,16 +12,16 @@ const Header = () => {
       <nav className="font-mono">
         <ul className="items-center hidden md:flex">
           <li className="mr-10">
-            <a href="#about">about</a>
+            <a href="/#about">about</a>
           </li>
           <li className="mr-10">
-            <a href="#experience">experience</a>
+            <a href="/#experience">experience</a>
           </li>
           <li className="mr-10">
-            <a href="#projects">projects</a>
+            <a href="/#projects">projects</a>
           </li>
           <li>
-            <a href="#contact">
+            <a href="/#contact">
               <Button title="contact" variant="primary" />
             </a>
           </li>
