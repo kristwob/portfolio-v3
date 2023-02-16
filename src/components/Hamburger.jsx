@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 import "./Hamburger.css";
 
@@ -26,24 +25,24 @@ const Hamburger = () => {
       <div className={`nav ${navOpen ? "nav-open" : ""} bg-black z-10`}>
         <ul className="nav-list text-lg font-semibold">
           <li>
-            <Link onClick={handleClick} href="#about">
+            <a onClick={handleClick} href="#about">
               about
-            </Link>
+            </a>
           </li>
           <li>
-            <Link onClick={handleClick} href="#projects">
+            <a onClick={handleClick} href="#projects">
               projects
-            </Link>
+            </a>
           </li>
           <li>
-            <Link onClick={handleClick} href="#experiences">
+            <a onClick={handleClick} href="#experiences">
               experience
-            </Link>
+            </a>
           </li>
           <li>
-            <Link onClick={handleClick} href="#contact">
+            <a onClick={handleClick} href="#contact">
               contact
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

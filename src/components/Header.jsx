@@ -12,18 +12,18 @@ const Header = () => {
       <nav className="font-mono">
         <ul className="items-center hidden md:flex">
           <li className="mr-10">
-            <Link href="#about">about</Link>
+            <a href="#about">about</a>
           </li>
           <li className="mr-10">
-            <Link href="#experience">experience</Link>
+            <a href="#experience">experience</a>
           </li>
           <li className="mr-10">
-            <Link href="#projects">projects</Link>
+            <a href="#projects">projects</a>
           </li>
           <li>
-            <Link href="#contact">
+            <a href="#contact">
               <Button title="contact" variant="primary" />
-            </Link>
+            </a>
           </li>
         </ul>
 
