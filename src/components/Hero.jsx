@@ -9,7 +9,7 @@ const Hero = () => {
           <Image alt="" src="/hero.jpg" width={200} height={200} style={{ maxWidth: "100%", height: "200", borderRadius:"100%" }} className="hidden md:block mb-4" />
           <p className="font-mono">fullstack developer</p>
           <h1 className="mt-4">Hi, I am Kristian Wobbes</h1>
-          <ul className="flex justify-center font-mono text-center mt-8">
+          <ul className="flex justify-center font-mono text-center mt-8 text-sm sm:text-base">
             <li>
               <Link className="mr-3" href="#about">
                 about
