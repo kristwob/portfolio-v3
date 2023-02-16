@@ -17,6 +17,9 @@
   h2 {
     @apply font-mono text-xl md:text-2xl;
   }
+  h3 {
+    @apply font-display text-3xl md:text-4xl xl:text-5xl text-orange_400;
+  }
   button {
     @apply font-mono;
   }
