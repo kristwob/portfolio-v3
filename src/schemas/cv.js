@@ -136,10 +136,20 @@ export default defineType({
           type: "object",
           fields: [
             defineField({
-              name: "title",
-              title: "Title",
+              name: "heading",
+              title: "Heading",
               type: "string",
-              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "location",
+              type: "string",
+              title: "Location",
+            }),
+            defineField({
+              name: "description",
+              type: "string",
+              title: "Description",
+              description: "A short description about your experience",
             }),
           ],
         },
