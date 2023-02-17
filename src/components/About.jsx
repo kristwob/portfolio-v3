@@ -6,7 +6,15 @@ const About = () => {
     <section id="about" className="mt-[8em] mb-[8em]">
       <h2 className="text-center mb-20">about</h2>
       <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 md:gap-3 md:place-items-stretch">
-        <Image alt="" src="/about.jpg" width={350} height={350} style={{ maxWidth: "100%", height: "auto" }} className="block" />
+        <Image
+          alt="Picture of Kristian in a traditional Norwegian sweater"
+          src="/about.jpg"
+          width={350}
+          height={350}
+          style={{ maxWidth: "100%", height: "auto" }}
+          className="block"
+          priority
+        />
         <div className="mt-5 md:mt-0 grid">
           <h3 className="mb-2">Here is a background</h3>
           <p className="mb-3">
