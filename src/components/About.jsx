@@ -12,7 +12,6 @@ const About = () => {
           width={350}
           height={350}
           className="block"
-          style={{ width: "auto" }}
           priority
         />
         <div className="mt-5 md:mt-0 grid">
