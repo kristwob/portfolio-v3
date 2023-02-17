@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       <head />
       <body className="bg-purple_400">
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

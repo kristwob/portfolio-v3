@@ -1,13 +1,17 @@
 import Hero from "../../components/Hero";
-import About from '../../components/About'
+import About from "../../components/About";
+import Experience from "../../components/Experience";
+import { cvQuery, projectQuery } from "../../lib/sanity.queries";
+import { client } from "../../lib/sanity.client";
 
-const Home = () => {
+const Home = async () => {
+  const cv = await client.fetch(cvQuery);
+  const projects = await client.fetch(projectQuery);
   return (
     <>
-      <main>
         <Hero />
         <About />
-      </main>
+        <Experience cv={cv.display} />
     </>
   );
 };
