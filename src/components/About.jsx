@@ -11,8 +11,8 @@ const About = () => {
           src="/about.jpg"
           width={350}
           height={350}
-          style={{ maxWidth: "100%", height: "auto" }}
           className="block"
+          style={{ width: "auto" }}
           priority
         />
         <div className="mt-5 md:mt-0 grid">
