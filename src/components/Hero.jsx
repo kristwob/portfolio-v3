@@ -19,22 +19,22 @@ const Hero = () => {
           <h1 className="mt-4">Hi, I am Kristian Wobbes</h1>
           <ul className="flex justify-center font-mono text-center mt-8 text-sm sm:text-base">
             <li>
-              <Link className="mr-3" href="#about">
+              <a className="mr-3" href="#about">
                 about
-              </Link>
+              </a>
             </li>
             <li>
-              <Link className="mr-3" href="#experience">
+              <a className="mr-3" href="#experience">
                 experience
-              </Link>
+              </a>
             </li>
             <li>
-              <Link className="mr-3" href="#projects">
+              <a className="mr-3" href="#projects">
                 projects
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="#contact">contact</Link>
+              <a href="#contact">contact</a>
             </li>
           </ul>
         </div>
