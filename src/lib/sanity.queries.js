@@ -4,7 +4,7 @@ export const projectQuery = groq`
 *[_type == "project"] 
 {
     title,
-    "imageUrl": coverImage.asset->{..., metaData},
+    "image": coverImage.asset->{..., metaData},
     "text": pt::text(content),
     skills,
     "slug": slug.current
@@ -12,9 +12,15 @@ export const projectQuery = groq`
 `;
 
 export const projectWithSlugQuery = groq`
-    *[_type == "project" && slug.current == $slug][0]
-    `
-
+    *[_type == "project" && slug.current == $slug][0] 
+    {
+        title,
+    "image": coverImage.asset->{..., metaData},
+    "text": pt::text(content),
+    skills,
+    "slug": slug.current
+    }
+    `;
 
 export const cvQuery = groq`
 *[_type == "cv"][0]

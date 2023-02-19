@@ -1,4 +1,6 @@
-const Button = ({ title, type, variant, onClick }) => {
+import Image from "next/image";
+
+const Button = ({ title, type, variant, onClick, className = "" }) => {
   switch (variant) {
     case "primary":
       return (
@@ -8,7 +10,22 @@ const Button = ({ title, type, variant, onClick }) => {
       );
     case "secondary":
       return (
-        <button onClick={onClick} type={type} className="border border-orange_400 hover:border-orange_300 active:border-orange_500 text-orange_400 hover:text-orange_300 active:text-orange_500 px-5 py-2 ">
+        <button
+          onClick={onClick}
+          type={type}
+          className="border border-orange_400 hover:border-orange_300 active:border-orange_500 text-orange_400 hover:text-orange_300 active:text-orange_500 px-5 py-2 "
+        >
+          {title}
+        </button>
+      );
+    case "back":
+      return (
+        <button
+          onClick={onClick}
+          type={type}
+          className={`${className} text-orange_400 hover:text-orange_300 focus:outline-orange_400 focus:outline-3 focus:outline-offset-2 active:text-orange_500 flex justify-center items-center gap-2`}
+        >
+          <Image alt="back-arrow" src="/back-arrow.svg" width={24} height={24} />
           {title}
         </button>
       );
