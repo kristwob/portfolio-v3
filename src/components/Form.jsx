@@ -1,4 +1,5 @@
 "use client";
+import { Elsie } from "@next/font/google";
 import React from "react";
 
 import Button from "./Button";
@@ -7,11 +8,16 @@ const DEFAULT_STATE = {
   name: "",
   email: "",
   message: "",
+  error: null,
 };
 
 export default class Form extends React.Component {
   constructor() {
     super();
+
+    this.nameRef = React.createRef();
+    this.emailRef = React.createRef();
+    this.messageRef = React.createRef();
 
     this.state = {
       ...DEFAULT_STATE,
@@ -21,6 +27,26 @@ export default class Form extends React.Component {
     e.preventDefault();
 
     const data = this.state;
+    if (data.name == "") {
+      this.setState({
+        error: "Name is required",
+      });
+      this.nameRef.current.focus();
+      return;
+    } else if (!this.isValidEmail(data.email)) {
+      this.setState({
+        error: "Invalid email, please check again",
+      });
+      this.emailRef.current.focus();
+      return;
+    } else if (data.message == "") {
+      this.setState({
+        error: "Message is required",
+      });
+      this.messageRef.current.focus();
+      return;
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "post",
@@ -30,7 +56,6 @@ export default class Form extends React.Component {
       if (!res.ok || res.status == 400) {
         throw new Error(`Invalid response: ${res.status}`);
       }
-      console.log(res)
       this.setState({ ...DEFAULT_STATE });
       alert("Thank you for contacting me!");
     } catch (error) {
@@ -49,20 +74,29 @@ export default class Form extends React.Component {
     });
   };
 
+  isValidEmail = (email) => {
+    // Regular expression for matching email addresses
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Test the email against the pattern and return the result
+    return emailPattern.test(email);
+  };
+
   render() {
     return (
       <form className="text-mono" onSubmit={this.handleSubmit}>
-        <div className="flex flex-col gap-2">
+        {this.state.error && <p className="">{this.state.error}</p>}
+        <div className="flex flex-col gap-2 mt-2">
           <label htmlFor="name">name</label>
-          <input required type="text" name="name" id="name" onChange={this.handleInputChange} value={this.state.name} />
+          <input type="text" name="name" id="name" onChange={this.handleInputChange} value={this.state.name} ref={this.nameRef} />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mt-2">
           <label htmlFor="email">email</label>
-          <input required type="text" name="email" id="email" onChange={this.handleInputChange} value={this.state.email} />
+          <input type="text" name="email" id="email" onChange={this.handleInputChange} value={this.state.email} ref={this.emailRef} />
         </div>
-        <div className="flex flex-col gap-2 mb-5">
+        <div className="flex flex-col gap-2 mt-2 mb-5">
           <label htmlFor="message">message</label>
-          <textarea required type="text" name="message" id="message" onChange={this.handleInputChange} value={this.state.message} />
+          <textarea type="text" name="message" id="message" onChange={this.handleInputChange} value={this.state.message} ref={this.messageRef} />
         </div>
         <Button title="send" variant="primary" type="submit" />
       </form>
