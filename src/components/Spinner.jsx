@@ -1,6 +1,4 @@
-import React from "react";
-
-const Loader = () => {
+const Spinner = () => {
   return (
     <div role="status" className="grid place-content-center h-[100vh]">
       <svg
@@ -24,4 +22,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default Spinner;
