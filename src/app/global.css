@@ -21,7 +21,10 @@
     @apply font-display text-3xl md:text-4xl xl:text-5xl text-orange_400;
   }
   button {
-    @apply font-mono;
+    @apply font-mono focus:outline-2 focus:outline-offset-4 focus:outline-orange_400;
+  }
+  input, textarea {
+    @apply font-sans outline-none px-3 py-2 bg-purple_300 focus:outline-2 focus:outline-offset-2 focus:outline-orange_400;
   }
 }
 

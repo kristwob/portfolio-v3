@@ -3,6 +3,7 @@ import Hero from "../../components/Hero";
 import About from "../../components/About";
 import Experience from "../../components/Experience";
 import Projects from "../../components/Projects/Projects";
+import Contact from "../../components/Contact";
 
 // Sanity
 import { cvQuery, projectQuery } from "../../lib/sanity.queries";
@@ -18,6 +19,7 @@ const Home = async () => {
       <About />
       <Experience cv={cv.display} />
       <Projects projects={projects} />
+      <Contact />
     </>
   );
 };
