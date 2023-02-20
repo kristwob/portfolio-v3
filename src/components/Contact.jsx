@@ -13,7 +13,7 @@ const Contact = () => {
         <div>
           <h3>My socials</h3>
           <div className="mt-2">
-            <p className="text-xl">Fell free to contact me on my socials listed below:</p>
+            <p className="text-xl">Feel free to contact me on my socials listed below:</p>
             <div className="flex justify-center gap-10 mt-12">
               <a href="https://www.linkedin.com/in/kristian-wobbes-219098194/" target="_blank" rel="noreferrer">
                 <IconButton variant="linkedin" />
