@@ -37,6 +37,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      description: "Image has to be 1300w*800h",
       validation: (rule) => rule.required(),
     }),
     defineField({
