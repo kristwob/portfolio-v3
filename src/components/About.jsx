@@ -29,7 +29,7 @@ const About = () => {
             the Drill Platoon.
           </p>
           <a href="#projects" className="md:place-self-end">
-            <Button type="button" variant="secondary" title="my projects" />
+            <Button type="button" variant="secondary" title="my projects" tabIndex="-1" />
           </a>
         </div>
       </div>

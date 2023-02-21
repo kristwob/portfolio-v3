@@ -22,7 +22,7 @@ const Header = () => {
           </li>
           <li>
             <a href="/#contact">
-              <Button title="contact" variant="primary" />
+              <Button title="contact" variant="primary" tabIndex="-1" />
             </a>
           </li>
         </ul>
