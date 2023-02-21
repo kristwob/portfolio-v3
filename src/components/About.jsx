@@ -8,7 +8,7 @@ const About = () => {
       <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 md:gap-3 md:place-items-stretch">
         <Image
           alt="Picture of Kristian in a traditional Norwegian sweater"
-          src="/about.jpg"
+          src="/images/about.jpg"
           width={350}
           height={350}
           className="block"

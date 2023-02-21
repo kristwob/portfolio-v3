@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 const Hero = () => {
@@ -9,7 +8,7 @@ const Hero = () => {
           <Image
             alt="Picture of Kristian smiling"
             priority
-            src="/hero.jpg"
+            src="/images/hero.jpg"
             width={200}
             height={200}
             style={{ borderRadius: "100%" }}
