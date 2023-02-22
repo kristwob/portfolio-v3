@@ -4,8 +4,6 @@ import { client } from "../../../lib/sanity.client";
 
 const PageCv = async () => {
   const cv = await client.fetch(cvQuery);
-  console.log(cv.languages);
-  // TODO add more information to the CV in the sanity studio
 
   return (
     <>
