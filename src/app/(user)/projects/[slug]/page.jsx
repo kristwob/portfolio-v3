@@ -30,7 +30,7 @@ const ProjectPage = async ({ params }) => {
 
   return (
     <div className="grid place-items-center mt-10">
-      <Link className="justify-self-start mb-5" href="/#projects" tabIndex={0}>
+      <Link className="justify-self-start mb-5 hover:no-underline" href="/#projects" tabIndex={0}>
         <Button title="Back" variant="back" />
       </Link>
       <SanityImage image={project.image} alt={project.title} />
