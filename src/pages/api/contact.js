@@ -1,9 +1,9 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { createTransport } from "nodemailer";
 
 export default async function handler(req, res) {
+  const { name, email, message } = req.body;
   try {
-    if (req.body.name === "" || req.body.email == "" || req.body.message == "") {
+    if (name === "" || email == "" || message == "") {
       res.status(400);
       throw new Error("Invalid request");
     }
@@ -17,12 +17,12 @@ export default async function handler(req, res) {
     });
 
     await transporter.sendMail({
-      from: req.body.email,
+      from: `${name} - ${email}`,
       to: "kristian.wobbes@gmail.com",
       subject: "Thanks for contacting me!",
-      text: req.body.message,
+      text: message,
     });
-    res.status(200).send("Thank you!");
+    res.status(200).send("Message sent");
   } catch (error) {
     res.send(error);
     console.log(error);
