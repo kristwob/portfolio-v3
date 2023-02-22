@@ -60,7 +60,7 @@ export default class Form extends React.Component {
       alert("Thank you for contacting me!");
     } catch (error) {
       console.error(error);
-      this.setState({ ...DEFAULT_STATE });
+      this.setState({ ...DEFAULT_STATE, error });
       alert("There seems to be an error, please try again later");
     }
   };
@@ -87,15 +87,21 @@ export default class Form extends React.Component {
       <form className="text-mono" onSubmit={this.handleSubmit}>
         {this.state.error && <p className="">{this.state.error}</p>}
         <div className="flex flex-col gap-2 mt-2">
-          <label className="font-mono" htmlFor="name">name</label>
+          <label className="font-mono" htmlFor="name">
+            name
+          </label>
           <input type="text" name="name" id="name" onChange={this.handleInputChange} value={this.state.name} ref={this.nameRef} />
         </div>
         <div className="flex flex-col gap-2 mt-2">
-          <label className="font-mono" htmlFor="email">email</label>
+          <label className="font-mono" htmlFor="email">
+            email
+          </label>
           <input type="text" name="email" id="email" onChange={this.handleInputChange} value={this.state.email} ref={this.emailRef} />
         </div>
         <div className="flex flex-col gap-2 mt-2 mb-5">
-          <label className="font-mono" htmlFor="message">message</label>
+          <label className="font-mono" htmlFor="message">
+            message
+          </label>
           <textarea type="text" name="message" id="message" onChange={this.handleInputChange} value={this.state.message} ref={this.messageRef} />
         </div>
         <Button title="send" variant="primary" type="submit" />
