@@ -14,7 +14,7 @@ const Experience = ({ cv }) => {
           </div>
         ))}
         <Link href="/cv" className="sm:col-start-1 md:col-start-2 md:place-self-center mt-10 md:mt-[10rem] lg:mt-[15rem]">
-          <Button title="resume" variant="primary" tabIndex="-1" />
+          <Button title="my cv" variant="primary" tabIndex="-1" />
         </Link>
       </div>
     </section>
