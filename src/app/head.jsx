@@ -14,7 +14,7 @@ export default function Head() {
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5a189a" />
       <meta name="msapplication-TileColor" content="#603cba" />
-      <meta name="theme-color" content="#ff0000" />
+      <meta name="theme-color" content="#ffffff" />
     </>
   );
 }
