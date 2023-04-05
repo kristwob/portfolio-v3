@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     domains: ["http://cdn.sanity.io"],
     loader: "custom",
-    loaderFile: "./src/lib/imageLoader.js",
+    loaderFile: "./src/lib/imageLoader.ts",
   },
 };
 

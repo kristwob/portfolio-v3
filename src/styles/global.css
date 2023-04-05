@@ -11,9 +11,7 @@
   footer {
     @apply xl:max-w-6xl lg:max-w-4xl md:max-w-3xl px-5 mx-auto;
   }
-  h1 {
-    @apply font-display xl:text-6xl md:text-5xl sm:text-4xl text-3xl text-orange_400;
-  }
+
   h2 {
     @apply font-mono text-xl md:text-2xl;
   }
@@ -26,9 +24,6 @@
   input,
   textarea {
     @apply font-sans outline-none px-3 py-2 bg-purple_300 /* focus:outline-2 focus:outline-offset-2 focus:outline-orange_400 */;
-  }
-  a {
-    @apply hover:underline hover:underline-offset-[.5em] hover:decoration-2 md:transition;
   }
   :focus {
     @apply outline outline-offset-4 outline-2 outline-orange_400;

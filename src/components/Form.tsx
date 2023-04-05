@@ -1,19 +1,18 @@
-"use client";
-import { Elsie } from "@next/font/google";
-import React from "react";
+'use client';
 
-import Button from "./Button";
+import React from 'react';
+import Button from '@/ui/Button';
 
 const DEFAULT_STATE = {
-  name: "",
-  email: "",
-  message: "",
+  name: '',
+  email: '',
+  message: '',
   error: null,
 };
 
 export default class Form extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.nameRef = React.createRef();
     this.emailRef = React.createRef();
@@ -27,29 +26,29 @@ export default class Form extends React.Component {
     e.preventDefault();
 
     const data = this.state;
-    if (data.name == "") {
+    if (data.name == '') {
       this.setState({
-        error: "Name is required",
+        error: 'Name is required',
       });
       this.nameRef.current.focus();
       return;
     } else if (!this.isValidEmail(data.email)) {
       this.setState({
-        error: "Invalid email, please check again",
+        error: 'Invalid email, please check again',
       });
       this.emailRef.current.focus();
       return;
-    } else if (data.message == "") {
+    } else if (data.message == '') {
       this.setState({
-        error: "Message is required",
+        error: 'Message is required',
       });
       this.messageRef.current.focus();
       return;
     }
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "post",
+      const res = await fetch('/api/contact', {
+        method: 'post',
         body: new URLSearchParams(data),
       });
 
@@ -57,11 +56,11 @@ export default class Form extends React.Component {
         throw new Error(`Invalid response: ${res.status}`);
       }
       this.setState({ ...DEFAULT_STATE });
-      alert("Thank you for contacting me!");
+      alert('Thank you for contacting me!');
     } catch (error) {
       console.error(error);
       this.setState({ ...DEFAULT_STATE, error });
-      alert("There seems to be an error, please try again later");
+      alert('There seems to be an error, please try again later');
     }
   };
 
@@ -74,7 +73,7 @@ export default class Form extends React.Component {
     });
   };
 
-  isValidEmail = (email) => {
+  isValidEmail = (email: string) => {
     // Regular expression for matching email addresses
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -84,27 +83,27 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <form className="text-mono" onSubmit={this.handleSubmit}>
-        {this.state.error && <p className="">{this.state.error}</p>}
-        <div className="flex flex-col gap-2 mt-2">
-          <label className="font-mono" htmlFor="name">
+      <form className='text-mono' onSubmit={this.handleSubmit}>
+        {this.state.error && <p className=''>{this.state.error}</p>}
+        <div className='flex flex-col gap-2 mt-2'>
+          <label className='font-mono' htmlFor='name'>
             name
           </label>
-          <input type="text" name="name" id="name" onChange={this.handleInputChange} value={this.state.name} ref={this.nameRef} />
+          <input type='text' name='name' id='name' onChange={this.handleInputChange} value={this.state.name} ref={this.nameRef} />
         </div>
-        <div className="flex flex-col gap-2 mt-2">
-          <label className="font-mono" htmlFor="email">
+        <div className='flex flex-col gap-2 mt-2'>
+          <label className='font-mono' htmlFor='email'>
             email
           </label>
-          <input type="text" name="email" id="email" onChange={this.handleInputChange} value={this.state.email} ref={this.emailRef} />
+          <input type='text' name='email' id='email' onChange={this.handleInputChange} value={this.state.email} ref={this.emailRef} />
         </div>
-        <div className="flex flex-col gap-2 mt-2 mb-5">
-          <label className="font-mono" htmlFor="message">
+        <div className='flex flex-col gap-2 mt-2 mb-5'>
+          <label className='font-mono' htmlFor='message'>
             message
           </label>
-          <textarea type="text" name="message" id="message" onChange={this.handleInputChange} value={this.state.message} ref={this.messageRef} />
+          <textarea type='text' name='message' id='message' onChange={this.handleInputChange} value={this.state.message} ref={this.messageRef} />
         </div>
-        <Button title="send" variant="primary" type="submit" />
+        <Button title='send' variant='primary' type='submit' />
       </form>
     );
   }
