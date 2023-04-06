@@ -1,14 +1,17 @@
 // Sanity
-import { cvQuery } from '../../../lib/sanity.queries';
-import { client } from '../../../lib/sanity.client';
-import { CV } from '@/types/Cv';
+import { cvQuery } from '../../../lib/sanity.queries'
+import { client } from '../../../lib/sanity.client'
+import { CV } from '@/types/Cv'
+import Heading from '@/ui/Heading'
+import BackButton from '@/components/BackButton'
 
 const PageCv = async () => {
-  const cv: CV = await client.fetch(cvQuery);
+  const cv: CV = await client.fetch(cvQuery)
 
   return (
     <>
-      <h1>Curriculum Vitae</h1>
+      <BackButton className='mt-8' />
+      <Heading className='mt-2'>Curriculum Vitae</Heading>
       <section className='grid md:grid-cols-2'>
         <div className='mt-5'>
           <h2 className='mb-2'>Personalia</h2>
@@ -68,7 +71,7 @@ const PageCv = async () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default PageCv;
+export default PageCv
