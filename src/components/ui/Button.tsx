@@ -4,7 +4,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import Icons from '@/components/Icons';
 
 export const buttonVariants = cva(
-  'text-base transition-colors disabled:opacity-50 disabled:pointer-events-none',
+  'flex items-center text-base transition-colors disabled:opacity-50 disabled:pointer-events-none',
   {
     variants: {
       variant: {

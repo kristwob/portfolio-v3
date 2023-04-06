@@ -1,6 +1,4 @@
 export default function Head() {
-  // TODO add a custom favicon to the page using: https://realfavicongenerator.net/
-  // ! Page cannot load source map
   return (
     <>
       <title>Kristian Wobbes</title>
