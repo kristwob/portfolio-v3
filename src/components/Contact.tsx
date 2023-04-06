@@ -1,4 +1,4 @@
-import Form from './Form';
+import Form from './MessageForm';
 import IconButton from '@/components/BackButton';
 import Paragraph from './ui/Paragraph';
 import GithubButton from './GithubButton';

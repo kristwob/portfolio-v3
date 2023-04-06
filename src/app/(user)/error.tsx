@@ -1,18 +1,20 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
-import Button from "../../components/ui/Button";
+import { useEffect } from 'react'
+import Button from '../../components/ui/Button'
 
-const Error = ({ error, reset }) => {
+const Error = ({ error, reset }: { error: Error; reset: void }) => {
   useEffect(() => {
-    console.error(error);
-  }, [error]);
+    console.error(error)
+  }, [error])
   return (
     <div>
       <h1>Something went wrong!</h1>
-      <Button title="reset" variant="primary" onClick={() => reset()} />
+      <Button variant='default' onClick={() => reset}>
+        Reset
+      </Button>
     </div>
-  );
-};
+  )
+}
 
-export default Error;
+export default Error

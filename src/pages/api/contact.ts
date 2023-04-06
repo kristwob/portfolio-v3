@@ -1,6 +1,7 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import { createTransport } from 'nodemailer';
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { name, email, message } = req.body;
   try {
     if (name === '' || email == '' || message == '') {
