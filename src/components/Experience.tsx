@@ -12,7 +12,7 @@ const Experience = ({ cv }: Props) => {
   return (
     <section id='experience' className='md:mt-[8em] container'>
       <h2 className='text-center mb-20'>experience</h2>
-      <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
+      <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8'>
         {cv.display.map((item) => (
           <div key={item._key}>
             <h3 className={headingVariants({ size: 'md' })}>{item.heading}</h3>
