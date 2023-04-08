@@ -3,6 +3,7 @@ const { colors } = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class'],
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -13,6 +14,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: '1.5rem',
+        screens: {
+          lg: '1024px',
+        },
+      },
       fontFamily: {
         sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
         mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
@@ -28,8 +36,6 @@ module.exports = {
         purple_200: '#5A189A',
         purple_300: '#3C096C',
         purple_400: '#240046',
-        white: '#F8F9FA',
-        black: '#111111',
       },
     },
   },

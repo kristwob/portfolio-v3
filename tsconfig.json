@@ -20,10 +20,10 @@
       }
     ],
     "paths": {
-      "@/styles/*": ["./src/styles/*"],
-      "@/lib/*": ["./src/lib/*"],
       "@/ui/*": ["./src/components/ui/*"],
       "@/components/*": ["./src/components/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/lib/*": ["./src/lib/*"],
       "@/types/*": ["./src/types/*"]
     }
   },

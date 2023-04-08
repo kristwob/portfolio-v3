@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import Paragraph from '@/ui/Paragraph';
-import { headingVariants } from '@/ui/Heading';
-import { cn } from '@/lib/utils';
+import Image from 'next/image'
+import Button from '@/components/ui/Button'
+import Paragraph from '@/ui/Paragraph'
+import { headingVariants } from '@/ui/Heading'
+import { cn } from '@/lib/utils'
 
 const About = () => {
   return (
-    <section id='about' className='mt-[8em] mb-[8em]'>
+    <section id='about' className='mt-[8em] mb-[8em] container'>
       <h2 className='text-center mb-20'>about</h2>
       <div className='flex flex-col justify-center items-center md:grid md:grid-cols-2 md:gap-4 md:place-items-stretch'>
         <Image
@@ -15,7 +15,7 @@ const About = () => {
           width={350}
           height={350}
           className='block'
-          style={{ height: 'auto' }}
+          style={{ maxWidth: '100%' }}
           priority
         />
         <div className='mt-5 md:mt-0 grid'>
@@ -33,14 +33,14 @@ const About = () => {
             the Drill Platoon.
           </Paragraph>
           <a href='#projects' className='md:place-self-end'>
-            <Button variant='outline'>
+            <Button tabIndex={-1} variant='outline'>
               my projects
             </Button>
           </a>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About

@@ -3,35 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply text-white;
-  }
-  header,
-  main,
-  footer {
-    @apply xl:max-w-6xl lg:max-w-4xl md:max-w-3xl px-5 mx-auto;
-  }
-
   h2 {
     @apply font-mono text-xl md:text-2xl;
   }
-  h3 {
-    @apply font-display text-3xl md:text-4xl xl:text-5xl text-orange_400;
-  }
-  button {
-    @apply font-mono;
-  }
   input,
-  textarea {
-    @apply font-sans outline-none px-3 py-2 bg-purple_300 /* focus:outline-2 focus:outline-offset-2 focus:outline-orange_400 */;
+  textarea,
+  select {
+    @apply font-sans outline-none px-3 py-2 bg-slate-200 dark:bg-slate-700;
   }
   :focus {
-    @apply outline outline-offset-4 outline-2 outline-orange_400;
+    @apply outline outline-offset-4 outline-2 outline-slate-900 dark:outline-orange_400;
+  }
+  form {
+    @apply font-mono;
   }
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 .nav {

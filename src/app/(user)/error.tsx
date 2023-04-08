@@ -2,6 +2,7 @@
 
 import Heading from '@/ui/Heading'
 import { useEffect } from 'react'
+import Button from '@/ui/Button'
 
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {
   useEffect(() => {
@@ -12,14 +13,15 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
   return (
     <div>
       <Heading>Something went wrong!</Heading>
-      <button
+      <Button
+        size='lg'
         onClick={
           // Attempt to recover by trying to re-render the segment
           () => reset()
         }
       >
         Try again
-      </button>
+      </Button>
     </div>
   )
 }

@@ -12,6 +12,7 @@ import SanityImage from '@/components/SanityImage';
 import type { Project } from '@/types/Project';
 import BackButton from '@/components/BackButton';
 import Heading from '@/ui/Heading';
+import Paragraph from '@/ui/Paragraph';
 
 type PageParams = {
   params: {
@@ -38,7 +39,7 @@ const ProjectPage = async ({ params }: PageParams) => {
   const content: string[] = project.text.split('\n\n');
 
   return (
-    <div className='grid place-items-center mt-10'>
+    <div className='grid place-items-center container pt-28'>
       <Link className='justify-self-start mb-5 hover:no-underline' href='/#projects' tabIndex={0}>
         <BackButton />
       </Link>
@@ -46,9 +47,9 @@ const ProjectPage = async ({ params }: PageParams) => {
       <div className='mt-5'>
         <Heading>{project.title}</Heading>
         {content.map((item, index) => (
-          <p key={index} className='mt-2'>
+          <Paragraph key={index} className='mt-2 w-full'>
             {item}
-          </p>
+          </Paragraph>
         ))}
       </div>
     </div>

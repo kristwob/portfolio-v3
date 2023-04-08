@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { cn } from '@/lib/utils';
 import { cva, VariantProps } from 'class-variance-authority';
 
-export const headingVariants = cva('font-display text-orange_400', {
+export const headingVariants = cva('font-display text-slate-900 dark:text-orange_400', {
   variants: {
     size: {
       default: 'text-4xl md:text-5xl lg:text-6xl mb-2',

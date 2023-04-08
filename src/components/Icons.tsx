@@ -1,5 +1,5 @@
-import { ChevronLeft, ChevronRight, Moon, Sun, Loader2, Info, GithubIcon, LinkedinIcon } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Moon, Sun, Loader2, Info, GithubIcon, LinkedinIcon, Check, Circle, Laptop } from 'lucide-react'
 
-const Icons = { ChevronLeft, ChevronRight, Moon, Sun, Loader2, Info, GithubIcon, LinkedinIcon };
+const Icons = { ChevronLeft, ChevronRight, Moon, Sun, Loader2, Info, GithubIcon, LinkedinIcon, Check, Circle, Laptop }
 
-export default Icons;
+export default Icons
