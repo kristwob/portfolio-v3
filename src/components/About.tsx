@@ -12,8 +12,8 @@ const About = () => {
         <Image
           alt='Picture of Kristian in a traditional Norwegian sweater'
           src='/images/about.jpg'
-          width={350}
-          height={350}
+          width={430}
+          height={600}
           className='block'
           style={{ maxWidth: '100%' }}
           priority

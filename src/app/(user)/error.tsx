@@ -11,7 +11,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
   }, [error])
 
   return (
-    <div>
+    <div className='container'>
       <Heading>Something went wrong!</Heading>
       <Button
         size='lg'

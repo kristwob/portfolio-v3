@@ -10,7 +10,9 @@ const NavBar = () => {
         <li>
           <ThemeToggle />
         </li>
+        <li>
         <Hamburger />
+        </li>
       </ul>
 
       <ul className='hidden md:flex md:items-center gap-4'>
