@@ -1,9 +1,12 @@
+'use client'
+
 import { buttonVariants } from './ui/Button'
 import ThemeToggle from './ThemeToggle'
 import Button from './ui/Button'
-import Hamburger from './ui/Hamburger'
+import MobileNav from './MobileNav'
 
 const NavBar = () => {
+
   return (
     <nav className='font-mono'>
       <ul className='md:hidden flex items-center justify-between gap-4'>
@@ -11,7 +14,7 @@ const NavBar = () => {
           <ThemeToggle />
         </li>
         <li>
-        <Hamburger />
+          <MobileNav />
         </li>
       </ul>
 
