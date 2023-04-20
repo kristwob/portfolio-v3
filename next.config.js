@@ -4,10 +4,10 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["http://cdn.sanity.io"],
-    loader: "custom",
-    loaderFile: "./src/lib/imageLoader.js",
-  },
-};
+    domains: ['http://cdn.sanity.io'],
+    loader: 'custom',
+    loaderFile: './src/lib/imageLoader.ts',
+  }
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
