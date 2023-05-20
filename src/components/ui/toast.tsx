@@ -6,7 +6,7 @@ import * as React from 'react'
 import hotToast, { Toaster as HotToaster } from 'react-hot-toast'
 import Paragraph from './Paragraph'
 
-export const Toaster = HotToaster
+ export const Toaster = HotToaster
 
 interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
   visible: boolean
