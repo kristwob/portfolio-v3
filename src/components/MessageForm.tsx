@@ -1,10 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
-import Button from '@/ui/Button'
+import Button, { buttonVariants } from '@/ui/Button'
 import { toast } from '@/ui/toast'
 import { Input, TextArea } from '@/ui/Input'
 import { Form } from './ui/Form'
+import { cn } from '@/lib/utils'
 
 type FormValues = {
   email: string
@@ -13,12 +14,12 @@ type FormValues = {
 }
 
 export default function MessageForm() {
-  const [loading, setLoading] = useState<boolean>(false)
-
   const onSubmit = async (data: FormValues) => {
     try {
+      console.log(data)
+
       const res = await fetch('/api/contact', {
-        method: 'post',
+        method: 'POST',
         body: new URLSearchParams(data),
       })
 
@@ -27,11 +28,9 @@ export default function MessageForm() {
       }
 
       toast({ message: 'I look forward to contacting you', type: 'success', title: 'Thanks for the message' })
-      setLoading(false)
     } catch (error) {
       console.error(error)
       toast({ title: 'There seems to be an error', message: 'Please try again later', type: 'error' })
-      setLoading(false)
     }
   }
 
@@ -51,9 +50,7 @@ export default function MessageForm() {
             <label htmlFor='message'>message</label>
             <TextArea {...register('message')} id='message' name='message' />
           </div>
-          <Button onClick={() => setLoading((prev) => !prev)} isLoading={loading} className='mt-4' type='submit'>
-            send
-          </Button>
+          <Input className={cn('mt-4 cursor-pointer', buttonVariants({ variant: 'default' }))} type='submit' value='send' />
         </div>
       )}
     </Form>
