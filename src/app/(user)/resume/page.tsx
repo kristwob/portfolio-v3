@@ -1,16 +1,16 @@
 // Sanity
 import { cvQuery } from '../../../lib/sanity.queries'
-import { client, revalidateTime } from '../../../lib/sanity.client'
+import { client } from '../../../lib/sanity.client'
 import { Resume } from '@/types'
 import Heading from '@/ui/Heading'
 import BackButton from '@/components/BackButton'
 import Paragraph from '@/ui/Paragraph'
 
-// Revalidate every hour in production, on every request in development
-export const revalidate = revalidateTime;
+// Revalidate every hour
+export const revalidate = 3600;
 
 const PageCv = async () => {
-  const cv = await client.fetch<Resume>(cvQuery, {}, { next: { revalidate: revalidateTime } })
+  const cv = await client.fetch<Resume>(cvQuery, {}, { next: { revalidate: 3600 } })
 
   return (
     <>

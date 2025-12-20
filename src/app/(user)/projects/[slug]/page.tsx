@@ -1,5 +1,5 @@
 import { projectSlugsQuery, projectWithSlugQuery } from '@/lib/sanity.queries';
-import { client, revalidateTime } from '@/lib/sanity.client';
+import { client } from '@/lib/sanity.client';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SanityImage from '@/components/SanityImage';
@@ -17,8 +17,8 @@ type PageParams = {
   }>;
 };
 
-// Revalidate every hour in production, on every request in development
-export const revalidate = revalidateTime;
+// Revalidate every hour
+export const revalidate = 3600;
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 
 // Get the slug param from the page - only fetch slugs for efficiency
 export async function generateStaticParams() {
-  const slugs = await client.fetch<string[]>(projectSlugsQuery, {}, { next: { revalidate: revalidateTime } });
+  const slugs = await client.fetch<string[]>(projectSlugsQuery, {}, { next: { revalidate: 3600 } });
 
   return slugs.map((slug) => ({
     slug,
@@ -53,7 +53,7 @@ export async function generateStaticParams() {
 
 const ProjectPage = async ({ params }: PageParams) => {
   const { slug } = await params;
-  const project = await client.fetch(projectWithSlugQuery, { slug }, { next: { revalidate: revalidateTime } });
+  const project = await client.fetch(projectWithSlugQuery, { slug }, { next: { revalidate: 3600 } });
   if (!project) {
     return notFound();
   }

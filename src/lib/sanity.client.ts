@@ -3,8 +3,8 @@ import { createClient } from '@sanity/client'
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || ''
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
 
-// Global revalidation time: 0 in development for instant updates, 3600 (1 hour) in production
-export const revalidateTime = process.env.NODE_ENV === 'production' ? 3600 : 0
+// Global revalidation time: 3600 seconds (1 hour) for ISR
+export const revalidateTime = 3600
 
 // Client with CDN enabled for production (faster reads)
 export const client = createClient({
