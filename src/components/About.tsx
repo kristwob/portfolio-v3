@@ -1,13 +1,13 @@
-import Button from '@/components/ui/Button'
-import Paragraph from '@/ui/Paragraph'
-import { headingVariants } from '@/ui/Heading'
-import { cn } from '@/lib/utils'
-import SanityImage from './SanityImage'
-import type { About as AboutType } from '@/types'
+import Button, { buttonVariants } from '@/components/ui/Button';
+import Paragraph from '@/ui/Paragraph';
+import { headingVariants } from '@/ui/Heading';
+import { cn } from '@/lib/utils';
+import SanityImage from './SanityImage';
+import type { About as AboutType } from '@/types';
 
 type Props = {
-  about: AboutType
-}
+  about: AboutType;
+};
 
 const About = ({ about }: Props) => {
   return (
@@ -18,19 +18,15 @@ const About = ({ about }: Props) => {
         <div className='mt-5 md:mt-0 grid'>
           <h3 className={cn(headingVariants({ size: 'sm' }), 'mb-2')}>{about.heading}</h3>
           {about.paragraphs.map((paragraph, index) => (
-            <Paragraph key={index}>
-              {paragraph}
-            </Paragraph>
+            <Paragraph key={index}>{paragraph}</Paragraph>
           ))}
-          <a href={about.buttonLink} className='md:place-self-end'>
-            <Button tabIndex={-1} variant='outline'>
-              {about.buttonText}
-            </Button>
+          <a href={about.buttonLink} className={cn(buttonVariants({ variant: 'outline' }), 'mt-2 md:mt-5 place-self-start md:place-self-end')}>
+            {about.buttonText}
           </a>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;
