@@ -1,10 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-orange-300: #FF9E00;
+  --color-orange-400: #FF8500;
+  --color-orange-500: #FF6D00;
+  --color-purple-50: #9D4EDD;
+  --color-purple-100: #7B2CBF;
+  --color-purple-200: #5A189A;
+  --color-purple-300: #3C096C;
+  --color-purple-400: #240046;
+  
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@utility container {
+  @apply mx-auto px-4 sm:px-8 lg:px-16;
+}
+
 
 @layer base {
   h2 {
-    @apply font-mono text-xl md:text-2xl;
+    @apply font-mono text-xl md:text-2xl text-slate-900 dark:text-slate-50;
   }
   input,
   textarea,
@@ -12,7 +32,7 @@
     @apply font-sans outline-none px-3 py-2 bg-slate-200 dark:bg-slate-700;
   }
   :focus {
-    @apply outline outline-offset-4 outline-2 outline-slate-900 dark:outline-orange_400;
+    @apply outline-offset-4 outline-2 outline-slate-900 dark:outline-orange-400;
   }
   form {
     @apply font-mono;

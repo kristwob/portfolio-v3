@@ -8,7 +8,7 @@ const LinkedInButton: FC<LinkedInButtonProps> = ({ className, ...props }) => {
   return (
     <button
       className={cn(
-        'p-5 bg-slate-900 hover:bg-slate-700 dark:bg-orange_400 dark:hover:bg-orange_300 dark:focus:bg-orange_300 dark:active:bg-orange_500 rounded-[100%]',
+        'p-5 bg-slate-900 hover:bg-slate-700 dark:bg-orange-400 dark:hover:bg-orange-300 dark:focus:bg-orange-300 dark:active:bg-orange-500 rounded-[100%]',
         className
       )}
       {...props}

@@ -1,4 +1,3 @@
-import Form from './MessageForm';
 import Paragraph from './ui/Paragraph';
 import GithubButton from './GithubButton';
 import LinkedInButton from './LinkedInButton';
@@ -10,11 +9,7 @@ const Contact = () => {
       <h2 className='text-center'>contact</h2>
       <div className='grid md:grid-cols-2 gap-5 mt-[8em]'>
         <div>
-          <h3 className={headingVariants({size: "md"})}>Send me an email</h3>
-          <Form />
-        </div>
-        <div>
-          <h3 className={headingVariants({size: "md"})}>My socials</h3>
+          <h3 className={headingVariants({ size: 'md' })}>My socials</h3>
           <div className='mt-2'>
             <Paragraph size='lg' className='text-xl'>
               Feel free to contact me on my socials listed below:

@@ -1,13 +1,16 @@
 // Sanity
 import { cvQuery } from '../../../lib/sanity.queries'
-import { client } from '../../../lib/sanity.client'
-import { CV } from '@/types/Cv'
+import { client, revalidateTime } from '../../../lib/sanity.client'
+import { Resume } from '@/types'
 import Heading from '@/ui/Heading'
 import BackButton from '@/components/BackButton'
 import Paragraph from '@/ui/Paragraph'
 
+// Revalidate every hour in production, on every request in development
+export const revalidate = revalidateTime;
+
 const PageCv = async () => {
-  const cv: CV = await client.fetch(cvQuery)
+  const cv = await client.fetch<Resume>(cvQuery, {}, { next: { revalidate: revalidateTime } })
 
   return (
     <>
@@ -33,25 +36,33 @@ const PageCv = async () => {
         </div>
         <div className='mt-5'>
           <h2 className='mb-2'>Experiences</h2>
-          {cv.experiences.map((item, index) => (
-            <Paragraph key={index} className='mb-2 flex flex-col sm:flex-row sm:gap-2'>
-              <span>
-                {item.from.split('-')[0]} - {item.to.split('-')[0]}:{' '}
-              </span>
-              <span>{item.title}</span>
-            </Paragraph>
-          ))}
+          {cv.experiences.map((item, index) => {
+            const fromYear = item.from.split('-')[0];
+            const toYear = item.current ? 'Present' : (item.to ? item.to.split('-')[0] : 'Present');
+            return (
+              <Paragraph key={index} className='mb-2 flex flex-col sm:flex-row sm:gap-2'>
+                <span>
+                  {fromYear} - {toYear}:{' '}
+                </span>
+                <span>{item.title}</span>
+              </Paragraph>
+            );
+          })}
         </div>
         <div className='mt-5'>
           <h2 className='mb-2'>Education</h2>
-          {cv.education.map((item, index) => (
-            <Paragraph key={index} className='mb-2 flex flex-col sm:flex-row sm:gap-2'>
-              <span>
-                {item.from.split('-')[0]} - {item.to.split('-')[0]}:{' '}
-              </span>
-              <span>{item.title}</span>
-            </Paragraph>
-          ))}
+          {cv.education.map((item, index) => {
+            const fromYear = item.from.split('-')[0];
+            const toYear = item.to ? item.to.split('-')[0] : 'Present';
+            return (
+              <Paragraph key={index} className='mb-2 flex flex-col sm:flex-row sm:gap-2'>
+                <span>
+                  {fromYear} - {toYear}:{' '}
+                </span>
+                <span>{item.title}</span>
+              </Paragraph>
+            );
+          })}
         </div>
         <div className='mt-5'>
           <h2 className='mb-2'>Courses</h2>
@@ -67,8 +78,8 @@ const PageCv = async () => {
           {cv.languages.map((item, index) => (
             <Paragraph key={index} className='flex flex-col mt-2'>
               <span className='text-lg'>{item.language}</span>
-              <span>Oral: {item.oral}</span>
-              <span>Written: {item.written}</span>
+              <span>Oral: {item.oral.charAt(0).toUpperCase() + item.oral.slice(1)}</span>
+              <span>Written: {item.written.charAt(0).toUpperCase() + item.written.slice(1)}</span>
             </Paragraph>
           ))}
         </div>

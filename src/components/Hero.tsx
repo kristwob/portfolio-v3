@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 const Hero = () => {
   return (
     <section className='flex items-center justify-center h-[70vh] container pt-32'>
-      <div className='w-72 md:w-[35rem] h-72 md:h-[35rem] rounded-[100%] border dark:border-slate-700 border-slate-300 flex items-center justify-center'>
+      <div className='w-72 md:w-140 h-72 md:h-140 rounded-[100%] border dark:border-slate-700 border-slate-300 flex items-center justify-center'>
         <div className='flex flex-col items-center text-center'>
           <Image
             alt='Picture of Kristian smiling'
