@@ -1,38 +1,129 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/77111ebf-431b-4f29-a936-4d7191717f4e/deploy-status)](https://app.netlify.com/projects/kristianwobbes/deploys)
+# Portfolio v3
+
+A modern, performant portfolio website built with Next.js 16, Sanity CMS, and TailwindCSS.
+
+## Features
+
+- ⚡ **Next.js 16** with App Router and Turbopack
+- 📝 **Sanity CMS** for content management
+- 🎨 **TailwindCSS** for styling with custom theme
+- 🌓 **Dark Mode** with next-themes
+- 📱 **Responsive Design** optimized for all devices
+- 🖼️ **Optimized Images** with next-sanity-image
+- 📧 **Contact Form** with email integration
+- 🎯 **TypeScript** for type safety
+- ♿ **Accessible** UI components with Radix UI
+
+## Tech Stack
+
+- **Framework:** Next.js 16.1.0
+- **CMS:** Sanity
+- **Styling:** TailwindCSS, CVA (Class Variance Authority)
+- **UI Components:** Radix UI
+- **Forms:** React Hook Form
+- **Email:** Nodemailer
+- **Fonts:** Inter, JetBrains Mono, Bebas Neue
+- **Icons:** Lucide React
+- **Package Manager:** pnpm
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- pnpm (recommended) or npm
+- Sanity account and project
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=your_api_token
+```
+
+### Installation
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run the development server
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Sanity Studio
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Access the Sanity Studio at [http://localhost:3000/studio](http://localhost:3000/studio) to manage content.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Build & Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+# Build for production
+pnpm build
 
-## Learn More
+# Start production server
+pnpm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+portfolio-v3/
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── (admin)/      # Sanity Studio route
+│   │   ├── (user)/       # Public-facing pages
+│   │   └── api/          # API routes
+│   ├── components/       # React components
+│   │   └── ui/           # Reusable UI components
+│   ├── lib/              # Utility functions
+│   ├── schemas/          # Sanity schemas
+│   ├── styles/           # Global styles
+│   └── types.ts          # TypeScript types
+├── public/               # Static assets
+└── sanity.config.js      # Sanity configuration
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Content Management
 
-## Deploy on Vercel
+The portfolio uses Sanity CMS for content management with the following schemas:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **About** - About section content
+- **Projects** - Portfolio projects with images, skills, and links
+- **CV/Resume** - Work experience and education
+- **Date Range** - Custom date range object
+- **Language** - Language proficiency
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Features & Sections
+
+- **Hero** - Landing section with introduction
+- **About** - Personal information with image
+- **Experience** - Work history and education
+- **Projects** - Portfolio showcase with filtering
+- **Contact** - Contact form with email integration
+- **Resume** - Detailed CV page
+
+## Performance Optimizations
+
+- ISR (Incremental Static Regeneration) with 1-hour revalidation
+- Optimized image loading with lazy loading and fade-in effects
+- Font optimization with next/font
+- Turbopack for faster builds
+- Component code splitting
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Author
+
+**Kristian Wobbes**
+
+- GitHub: [@kristwob](https://github.com/kristwob)
+- Portfolio: [https://kristianwobbes.netlify.app](https://kristianwobbes.netlify.app)
